@@ -7,14 +7,9 @@ import time
 def obtain_data(day,month,year, pre2019=True):
     '''Function that reads in the data from the ipu archives'''
     if pre2019==True:
-        return pd.read_html(
-            f'http://archive.ipu.org/wmn-e/arc/classif{day}{month}{year}.htm',
-            header=[1],
-        )[1]
+        return pd.read_html(f'http://archive.ipu.org/wmn-e/arc/classif{day}{month}{year}.htm')[1] #,header=[1]
     else:
-        return pd.read_csv(
-        f'https://data.ipu.org/api/women-ranking.csv?load-entity-refs=taxonomy_term%2Cfield_collection_item&max-depth=2&langcode=en&month={month}&year={year}'
-        ) 
+        return pd.read_csv(f'https://data.ipu.org/api/women-ranking.csv?load-entity-refs=taxonomy_term%2Cfield_collection_item&max-depth=2&langcode=en&month={month}&year={year}') 
 
 def clean(df):
     '''Function that corrects the column headers'''
@@ -42,18 +37,18 @@ dates = [(date[:2], date[2:4], date[4:6]) for date in dates]
 # Loop through months and years 1997-2018 and pull the data, save each file to the data/world_data folder
 for d, m, y in dates:
     try:
-        df = clean(obtain_data(d,m,y))
+        df = clean(obtain_data(d,m,y,pre2019=True))
         # save dataframe to folder but change format of name to make formatting consistent (ex: 'wd_month_year')
         if (m[0]=='0') & (int(y)>19):
-            df.to_csv('data/world_data/' + 'wd_' + m[1] + '_' + '19' + y + '.csv', index=False)
+            df.to_csv('data/world_data2/' + 'wd_' + m[1] + '_' + '19' + y + '.csv', index=False)
         elif (m[0]=='0') & (int(y)<=19):
-            df.to_csv('data/world_data/' + 'wd_' + m[1] + '_' + '20' + y + '.csv', index=False)
+            df.to_csv('data/world_data2/' + 'wd_' + m[1] + '_' + '20' + y + '.csv', index=False)
         elif (m[0]>'0') & (int(y)>19):
-            df.to_csv('data/world_data/' + 'wd_' + m + '_' + '19' + y + '.csv', index=False)
+            df.to_csv('data/world_data2/' + 'wd_' + m + '_' + '19' + y + '.csv', index=False)
         else:
-            df.to_csv('data/world_data/' + 'wd_' + m + '_' + '20' + y + '.csv', index=False)
+            df.to_csv('data/world_data2/' + 'wd_' + m + '_' + '20' + y + '.csv', index=False)
     except Exception:
-        print(f'{str(m)},' + y + ' did not work.')
+        continue
     time.sleep(15)
 
 
@@ -64,7 +59,7 @@ for year in ['2019','2020','2021','2022']:
     for month in range(1,13):
         try:
             df = obtain_data(day,month,year,pre2019=False)
-            df.to_csv('data/world_data/' + 'wd_' + str(month) + '_' + year + '.csv', index=False)
-        except:
-            print(f'{str(month)} {year} + did not work.')
+            df.to_csv('data/world_data2/' + 'wd_' + str(month) + '_' + year + '.csv', index=False)
+        except Exception:
+            continue
         time.sleep(15)
