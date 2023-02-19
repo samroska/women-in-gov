@@ -40,13 +40,13 @@ for d, m, y in dates:
         df = clean(obtain_data(d,m,y,pre2019=True))
         # save dataframe to folder but change format of name to make formatting consistent (ex: 'wd_month_year')
         if (m[0]=='0') & (int(y)>19):
-            df.to_csv('data/world_data2/' + 'wd_' + m[1] + '_' + '19' + y + '.csv', index=False)
+            df.to_csv('data/world_data/' + 'wd_' + m[1] + '_' + '19' + y + '.csv', index=False)
         elif (m[0]=='0') & (int(y)<=19):
-            df.to_csv('data/world_data2/' + 'wd_' + m[1] + '_' + '20' + y + '.csv', index=False)
+            df.to_csv('data/world_data/' + 'wd_' + m[1] + '_' + '20' + y + '.csv', index=False)
         elif (m[0]>'0') & (int(y)>19):
-            df.to_csv('data/world_data2/' + 'wd_' + m + '_' + '19' + y + '.csv', index=False)
+            df.to_csv('data/world_data/' + 'wd_' + m + '_' + '19' + y + '.csv', index=False)
         else:
-            df.to_csv('data/world_data2/' + 'wd_' + m + '_' + '20' + y + '.csv', index=False)
+            df.to_csv('data/world_data/' + 'wd_' + m + '_' + '20' + y + '.csv', index=False)
     except Exception:
         continue
     time.sleep(15)
@@ -59,7 +59,7 @@ for year in ['2019','2020','2021','2022']:
     for month in range(1,13):
         try:
             df = obtain_data(day,month,year,pre2019=False)
-            df.to_csv('data/world_data2/' + 'wd_' + str(month) + '_' + year + '.csv', index=False)
+            df.to_csv('data/world_data/' + 'wd_' + str(month) + '_' + year + '.csv', index=False)
         except Exception:
             continue
         time.sleep(15)
