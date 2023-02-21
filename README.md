@@ -8,7 +8,7 @@ Milestone I
 - Samantha Roska
 - Samantha Russel
 
-### Dependancies
+### Dependencies
 
 | library | Verion use in development |
 |---------|----------|
@@ -19,21 +19,21 @@ Milestone I
 | python | 3.10.6
 | seaborn  | 0.12.2 |
 
- > There is output from 'pip3 list' from one of our machines located in file versions.txt. In a future iteration of this project we will use pyenv in order to have a smother development experience.
+ > This is the output from the 'pip3 list' from one of our machines located in file requirements.txt. In a future iteration of this project we will use pyenv in order to have a smoother development experience.
 
 ## Project Summary 
 
 The 118th United States Congress boasts the highest percentage of women in history, with women making up 28% of the governing body (pew research). This fact has been cited to champion the US as a model of equality, however, how does this claim hold up when compared to other democratic countries? Using international government data, we will explore how women in government has changed in the past 20 years.
 
-Our question: Do countries with democratic government have more women in their governing bodies?
+Our question: Do countries with more democratic governments have more women in their governing bodies?
 
 ## Data Sources
 
-- [Women in National Parliments](http://archive.ipu.org/wmn-e/classif-arc.htm): This data has been pulled via a python scrip. You can find all the dataset within data/world_data with the naming convention 'wd_month_year'. The original script used to gather this data is within the data_cleaning.ipynb notebook. However, the line has been commented out in order to limit calls to the source website.
+- [Women in National Parliments](http://archive.ipu.org/wmn-e/classif-arc.htm): This data has been pulled via a python script. You can find all of the datasets within data/world_data with the naming convention 'wd_month_year'. The original script used to gather this data is scripts/obtaining_world_data.py and can be run via our notebook. However, the line has been commented out in order to limit calls to the source website.
 
 - [Democracy Index Score](https://www.eiu.com/n/campaigns/democracy-index-2021/): The democracy index score was how we categorized and defined the term 'democratic government'. This index is on a scale of 0-10. There are 4 main categories (Full democracy, Flawed Democracy, Hybrid Regimes, and Authoritarian Regimes) with ranges on the 1 - 10 scale.
 
-- [ISO Code](https://raw.githubusercontent.com/plotly/datasets/master/2014_world_gdp_with_codes.csv):This was not a major data source and is not included in our report. This was used to get a complete list of ISO country code for the Choropleth graphs in the visualizations.ipynb
+- [ISO Code](https://raw.githubusercontent.com/plotly/datasets/master/2014_world_gdp_with_codes.csv):This was not a major data source, but was used to get a complete list of ISO country codes for the Choropleth graphs in the visualizations.ipynb
 
 
 ## Noteable Files
@@ -42,7 +42,7 @@ Our question: Do countries with democratic government have more women in their g
 
  - *data_cleaning.ipynb* : All of the steps we performed to gather and format our source data is contained within this notebook. Pre-processing, dataframe manipulation, and output csv code is within this notebook.
 
- - *data_visualizations.ipynb*: After data cleaning and initial manipulation, we started exploring insights into the data via visualizations. Within this notebook you will find all the exploratory visualization we created. Not all visualizations within this notebook were included in the final report PDF.
+ - *data_visualizations.ipynb*: After data cleaning and initial manipulation, we started exploring insights into the data via visualizations. Within this notebook you will find all the exploratory visualizations we created. Not all visualizations within this notebook were included in the final report PDF.
 
 ## Project Limitations
 
