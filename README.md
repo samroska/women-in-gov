@@ -10,7 +10,7 @@ Milestone I
 
 ### Dependencies
 
-| library | Verion use in development |
+| library | Version use in development |
 |---------|----------|
 |matplotlib | 3.6.3 |
 |numpy | 1.23.3 |
