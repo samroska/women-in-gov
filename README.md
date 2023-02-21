@@ -6,7 +6,7 @@ Milestone I
 
 - Rebecca Hailperin-Lausch
 - Samantha Roska
-- Samanthagit Russel
+- Samantha Russel
 
 ### Dependancies
 
@@ -19,7 +19,7 @@ Milestone I
 | python | 3.10.6
 | seaborn  | 0.12.2 |
 
- > There is output from 'pip3 list' from one of our machines located in file versions.txt. In a future iteration of this project we will use pyenv in order to have a smother development expierence.
+ > There is output from 'pip3 list' from one of our machines located in file versions.txt. In a future iteration of this project we will use pyenv in order to have a smother development experience.
 
 ## Project Summary 
 
@@ -33,7 +33,7 @@ Our question: Do countries with democratic government have more women in their g
 
 - [Democracy Index Score](https://www.eiu.com/n/campaigns/democracy-index-2021/): The democracy index score was how we categorized and defined the term 'democratic government'. This index is on a scale of 0-10. There are 4 main categories (Full democracy, Flawed Democracy, Hybrid Regimes, and Authoritarian Regimes) with ranges on the 1 - 10 scale.
 
--[ISO Code](https://raw.githubusercontent.com/plotly/datasets/master/2014_world_gdp_with_codes.csv):This was not a major data source and is not included in our report. This was used to get a complete list of ISO country code for the Choropleth graphs in the visualizations.ipynb
+- [ISO Code](https://raw.githubusercontent.com/plotly/datasets/master/2014_world_gdp_with_codes.csv):This was not a major data source and is not included in our report. This was used to get a complete list of ISO country code for the Choropleth graphs in the visualizations.ipynb
 
 
 ## Noteable Files
@@ -42,7 +42,7 @@ Our question: Do countries with democratic government have more women in their g
 
  - *data_cleaning.ipynb* : All of the steps we performed to gather and format our source data is contained within this notebook. Pre-processing, dataframe manipulation, and output csv code is within this notebook.
 
- - *data_visualizations.ipynb*: After data cleaning and initial manipulation, we started exploring insights into the data via visualizatioins. Within this notebook you will find all the exploritory visualzation we created. Not all visualizations within this notebook were included in the final report PDF.
+ - *data_visualizations.ipynb*: After data cleaning and initial manipulation, we started exploring insights into the data via visualizations. Within this notebook you will find all the exploratory visualization we created. Not all visualizations within this notebook were included in the final report PDF.
 
 ## Project Limitations
 
@@ -52,6 +52,6 @@ Our data is from publicly available and widely cited data sources. Due to our da
 
 - Finding additional data sources to help get a more clear picture of our initial question. 
 - Having more detail on the government upper and lower house for countries.
-- Using more advanced techniques like michine learning to help with analysis
+- Using more advanced techniques like machine learning to help with analysis
 - Building cloud skills like AWS SageMaker notebooks and S3 for .csv storage
 - Code automation and integration with cloud provider. Github actions to auto publish notebook changes and analysis to run.
