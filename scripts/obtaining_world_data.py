@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 
 # This file reads in the data for each month and each year from 1998-2022
 # from the ipu website and then saves each to a seperate .csv file.
+# It takes a while to run (over 40 minutes) because I put in wait times to not overload the website
 
 def obtain_data(day,month,year, pre2019=True):
     '''Function that reads in the data from the ipu archives.
@@ -44,14 +45,15 @@ for d, m, y in dates:
     try:
         df = clean(obtain_data(d,m,y,pre2019=True))
         # save dataframe to folder but change format of name to make formatting consistent (ex: 'wd_month_year')
+        # changing where it saves to so that we do not overwrite the data that we already pullled
         if (m[0]=='0') & (int(y)>19):
-            df.to_csv('data/world_data/' + 'wd_' + m[1] + '_' + '19' + y + '.csv', index=False)
+            df.to_csv('./data/unused/world_data/' + 'wd_' + m[1] + '_' + '19' + y + '.csv', index=False)
         elif (m[0]=='0') & (int(y)<=19):
-            df.to_csv('data/world_data/' + 'wd_' + m[1] + '_' + '20' + y + '.csv', index=False)
+            df.to_csv('./data/unused/world_data/' + 'wd_' + m[1] + '_' + '20' + y + '.csv', index=False)
         elif (m[0]>'0') & (int(y)>19):
-            df.to_csv('data/world_data/' + 'wd_' + m + '_' + '19' + y + '.csv', index=False)
+            df.to_csv('./data/unused/world_data/' + 'wd_' + m + '_' + '19' + y + '.csv', index=False)
         else:
-            df.to_csv('data/world_data/' + 'wd_' + m + '_' + '20' + y + '.csv', index=False)
+            df.to_csv('./data/unused/world_data/' + 'wd_' + m + '_' + '20' + y + '.csv', index=False)
     except Exception:
         continue
     time.sleep(15)
@@ -64,7 +66,8 @@ for year in ['2019','2020','2021','2022']:
     for month in range(1,13):
         try:
             df = obtain_data(day,month,year,pre2019=False)
-            df.to_csv('data/world_data/' + 'wd_' + str(month) + '_' + year + '.csv', index=False)
+            # changing where it saves to so that we do not overwrite the data that we already pullled
+            df.to_csv('./data/unused/world_data/' + 'wd_' + str(month) + '_' + year + '.csv', index=False)
         except Exception:
             continue
         time.sleep(15)
