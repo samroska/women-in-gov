@@ -18,6 +18,7 @@ Milestone I
 | plotly  | 5.13.0 |
 | python | 3.10.6
 | seaborn  | 0.12.2 |
+| lxml | 4.9.1 |
 
  > This is the output from the 'pip3 list' from one of our machines located in file requirements.txt. In a future iteration of this project we will use pyenv in order to have a smoother development experience.
 
