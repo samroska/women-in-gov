@@ -12,11 +12,15 @@ Milestone I
 
 | library | Version use in development |
 |---------|----------|
+| beautifulsoup4 | 4.11.1 |
+| lxml | 4.9.1 |
 |matplotlib | 3.6.3 |
+| nbformat | 5.5.0 |
 |numpy | 1.23.3 |
 | pandas | 1.4.4 |
 | plotly  | 5.13.0 |
-| python | 3.10.6
+| python | 3.10.6 |
+| requests | 2.28.1 |
 | seaborn  | 0.12.2 |
 
  > This is the output from the 'pip3 list' from one of our machines located in file requirements.txt. In a future iteration of this project we will use pyenv in order to have a smoother development experience.
