@@ -1,11 +1,16 @@
-import pandas as pd
-from bs4 import BeautifulSoup
-import requests
 import re
 import time
+import requests
+import pandas as pd
+from bs4 import BeautifulSoup
+
+# This file reads in the data for each month and each year from 1998-2022
+# from the ipu website and then saves each to a seperate .csv file.
 
 def obtain_data(day,month,year, pre2019=True):
-    '''Function that reads in the data from the ipu archives'''
+    '''Function that reads in the data from the ipu archives.
+        There were slightly different versions of the website for 
+        years before 2019 and years after 2019.'''
     if pre2019==True:
         return pd.read_html(f'http://archive.ipu.org/wmn-e/arc/classif{day}{month}{year}.htm')[1] #,header=[1]
     else:
